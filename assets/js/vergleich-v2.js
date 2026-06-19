@@ -279,8 +279,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Kontaktformular absenden
-  document.getElementById("contactForm").addEventListener("submit", function (e) {
+  document.getElementById("contactForm").addEventListener("submit", async function (e) {
     e.preventDefault();
+    var submitButton = this.querySelector('button[type="submit"]');
+    var originalButtonText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = "Anfrage wird gesendet...";
 
     var contactData = {};
     new FormData(this).forEach(function (val, key) { contactData[key] = val; });
@@ -295,13 +299,27 @@ document.addEventListener("DOMContentLoaded", function () {
       timestamp: new Date().toISOString()
     };
 
-    console.log("Lead erfasst:", lead);
+    try {
+      var response = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(lead)
+      });
 
-    // Hier könnte der Lead an ein Backend gesendet werden:
-    // fetch('/api/leads', { method: 'POST', body: JSON.stringify(lead), headers: { 'Content-Type': 'application/json' } });
+      if (!response.ok) {
+        throw new Error("Anfrage konnte nicht gesendet werden.");
+      }
 
-    document.getElementById("contactModal").classList.add("hidden");
-    document.getElementById("successOverlay").classList.remove("hidden");
+      document.getElementById("contactModal").classList.add("hidden");
+      document.getElementById("successOverlay").classList.remove("hidden");
+      this.reset();
+    } catch (error) {
+      console.error("Lead konnte nicht gesendet werden:", error);
+      alert("Die Anfrage konnte gerade nicht gesendet werden. Bitte versuche es gleich erneut.");
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
+    }
   });
 
   document.getElementById("successClose").addEventListener("click", function () {

@@ -120,14 +120,36 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Anfrage bestätigen
-  document.getElementById("modalConfirm").addEventListener("click", function () {
-    modalOverlay.classList.add("hidden");
-    successOverlay.classList.remove("hidden");
+  document.getElementById("modalConfirm").addEventListener("click", async function () {
+    var confirmButton = this;
+    var originalButtonText = confirmButton.textContent;
+    confirmButton.disabled = true;
+    confirmButton.textContent = "Anfrage wird gesendet...";
 
-    // Hier könnte der Lead an ein Backend/API gesendet werden
     var lead = JSON.parse(sessionStorage.getItem("leadData") || "{}");
     lead.provider = document.getElementById("modalProvider").textContent;
-    console.log("Lead erfasst:", lead);
+    lead.timestamp = new Date().toISOString();
+
+    try {
+      var response = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(lead)
+      });
+
+      if (!response.ok) {
+        throw new Error("Anfrage konnte nicht gesendet werden.");
+      }
+
+      modalOverlay.classList.add("hidden");
+      successOverlay.classList.remove("hidden");
+    } catch (error) {
+      console.error("Lead konnte nicht gesendet werden:", error);
+      alert("Die Anfrage konnte gerade nicht gesendet werden. Bitte versuche es gleich erneut.");
+    } finally {
+      confirmButton.disabled = false;
+      confirmButton.textContent = originalButtonText;
+    }
   });
 
   // Erfolg schließen
