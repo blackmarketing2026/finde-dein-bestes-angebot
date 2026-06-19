@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Entrümpelung in Ingolstadt – Vergleiche jetzt kostenlos Angebote von geprüften Entrümpelungsfirmen.">
+  <title>Entrümpelung in Ingolstadt – Angebote vergleichen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/vergleich-v2.css">
+  <link rel="icon" href="assets/images/logo (4).png" type="image/png">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="header-logo">
+        <img src="assets/images/logo (4).png" alt="Bestes Angebot Logo">
+        <span>Angebotsvergleich</span>
+      </a>
+      <div class="header-rating">
+        <span class="stars">★★★★★</span>
+        <span>4,9/5</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="v-hero">
+    <div class="container">
+      <div class="trust-badge">✓ Kostenlos &amp; unverbindlich</div>
+      <h1>Entrümpelung in Ingolstadt<br><span>Angebote in Echtzeit vergleichen</span></h1>
+      <p>Beschreibe dein Vorhaben – unsere KI findet die besten Anbieter für dich.</p>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- PHASE 1: Quiz (keine persönlichen Daten)     -->
+  <!-- ============================================ -->
+  <section class="quiz-section" id="quizSection">
+    <div class="container">
+      <div class="quiz-card card">
+        <div class="quiz-progress">
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+          <span class="progress-text" id="progressText">Schritt 1 von 5</span>
+        </div>
+
+        <form id="quizForm" autocomplete="off">
+
+          <!-- Schritt 1: Was entrümpeln? -->
+          <div class="quiz-step active" data-step="1">
+            <h2>Was möchtest du entrümpeln lassen?</h2>
+            <div class="option-grid cols-3">
+              <label class="option-card">
+                <input type="radio" name="objekt" value="wohnung" required>
+                <div class="option-content"><span class="option-icon">🏠</span><span class="option-label">Wohnung</span></div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="objekt" value="haus">
+                <div class="option-content"><span class="option-icon">🏡</span><span class="option-label">Haus</span></div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="objekt" value="keller">
+                <div class="option-content"><span class="option-icon">📦</span><span class="option-label">Keller</span></div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="objekt" value="dachboden">
+                <div class="option-content"><span class="option-icon">🏚️</span><span class="option-label">Dachboden</span></div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="objekt" value="garage">
+                <div class="option-content"><span class="option-icon">🚗</span><span class="option-label">Garage</span></div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="objekt" value="gewerbe">
+                <div class="option-content"><span class="option-icon">🏢</span><span class="option-label">Gewerbe</span></div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Schritt 2: Wie groß? -->
+          <div class="quiz-step" data-step="2">
+            <h2>Wie groß ist die Fläche ungefähr?</h2>
+            <div class="option-grid cols-2">
+              <label class="option-card">
+                <input type="radio" name="flaeche" value="bis-30" required>
+                <div class="option-content"><span class="option-icon">📐</span><span class="option-label">Bis 30 m²</span></div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="flaeche" value="30-70">
+                <div class="option-content"><span class="option-icon">📐</span><span class="option-label">30 – 70 m²</span></div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="flaeche" value="70-120">
+                <div class="option-content"><span class="option-icon">📐</span><span class="option-label">70 – 120 m²</span></div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="flaeche" value="ueber-120">
+                <div class="option-content"><span class="option-icon">📐</span><span class="option-label">Über 120 m²</span></div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Schritt 3: Füllgrad -->
+          <div class="quiz-step" data-step="3">
+            <h2>Wie voll ist der Raum?</h2>
+            <div class="option-grid cols-3">
+              <label class="option-card">
+                <input type="radio" name="fuellgrad" value="wenig" required>
+                <div class="option-content">
+                  <span class="option-icon">🟢</span>
+                  <span class="option-label">Wenig</span>
+                  <span class="option-desc">Einzelne Gegenstände</span>
+                </div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="fuellgrad" value="mittel">
+                <div class="option-content">
+                  <span class="option-icon">🟡</span>
+                  <span class="option-label">Mittel</span>
+                  <span class="option-desc">Halb voll</span>
+                </div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="fuellgrad" value="voll">
+                <div class="option-content">
+                  <span class="option-icon">🔴</span>
+                  <span class="option-label">Voll</span>
+                  <span class="option-desc">Komplett vollgestellt</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Schritt 4: Wann? -->
+          <div class="quiz-step" data-step="4">
+            <h2>Wann soll die Entrümpelung stattfinden?</h2>
+            <div class="option-grid cols-2">
+              <label class="option-card">
+                <input type="radio" name="zeitraum" value="sofort" required>
+                <div class="option-content"><span class="option-icon">⚡</span><span class="option-label">So schnell wie möglich</span></div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="zeitraum" value="2-wochen">
+                <div class="option-content"><span class="option-icon">📅</span><span class="option-label">In 1–2 Wochen</span></div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="zeitraum" value="monat">
+                <div class="option-content"><span class="option-icon">🗓️</span><span class="option-label">Innerhalb 1 Monat</span></div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="zeitraum" value="flexibel">
+                <div class="option-content"><span class="option-icon">🤷</span><span class="option-label">Bin flexibel</span></div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Schritt 5: Etage + Besonderheiten -->
+          <div class="quiz-step" data-step="5">
+            <h2>Noch ein paar Details</h2>
+
+            <div class="detail-group">
+              <label class="detail-label">In welchem Stockwerk?</label>
+              <div class="option-grid cols-4">
+                <label class="option-card small">
+                  <input type="radio" name="etage" value="eg" required>
+                  <div class="option-content"><span class="option-label">EG</span></div>
+                </label>
+                <label class="option-card small">
+                  <input type="radio" name="etage" value="1og">
+                  <div class="option-content"><span class="option-label">1. OG</span></div>
+                </label>
+                <label class="option-card small">
+                  <input type="radio" name="etage" value="2og">
+                  <div class="option-content"><span class="option-label">2. OG</span></div>
+                </label>
+                <label class="option-card small">
+                  <input type="radio" name="etage" value="3plus">
+                  <div class="option-content"><span class="option-label">3+</span></div>
+                </label>
+              </div>
+            </div>
+
+            <div class="detail-group">
+              <label class="detail-label">Gibt es einen Aufzug?</label>
+              <div class="option-grid cols-2">
+                <label class="option-card small">
+                  <input type="radio" name="aufzug" value="ja" required>
+                  <div class="option-content"><span class="option-label">Ja</span></div>
+                </label>
+                <label class="option-card small">
+                  <input type="radio" name="aufzug" value="nein">
+                  <div class="option-content"><span class="option-label">Nein</span></div>
+                </label>
+              </div>
+            </div>
+
+            <div class="detail-group">
+              <label class="detail-label">Sonderwünsche (optional)</label>
+              <div class="checkbox-grid">
+                <label class="check-card">
+                  <input type="checkbox" name="extras" value="besenrein">
+                  <span class="check-label">🧹 Besenreine Übergabe</span>
+                </label>
+                <label class="check-card">
+                  <input type="checkbox" name="extras" value="entsorgung">
+                  <span class="check-label">♻️ Entsorgungsnachweis</span>
+                </label>
+                <label class="check-card">
+                  <input type="checkbox" name="extras" value="wertanrechnung">
+                  <span class="check-label">💰 Wertanrechnung</span>
+                </label>
+                <label class="check-card">
+                  <input type="checkbox" name="extras" value="besichtigung">
+                  <span class="check-label">👁️ Vorherige Besichtigung</span>
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%; margin-top:1.5rem;">
+              🔍 Jetzt Anbieter vergleichen
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+      <div class="live-activity">
+        <span class="live-dot"></span>
+        <span id="liveText">Gerade vergleichen 3 Personen aus Ingolstadt Angebote</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- PHASE 2: KI-Suche Animation                 -->
+  <!-- ============================================ -->
+  <section class="ai-section hidden" id="aiSection">
+    <div class="container">
+
+      <div class="ai-header">
+        <div class="ai-brain">
+          <div class="ai-pulse-ring"></div>
+          <span class="ai-icon">🤖</span>
+        </div>
+        <h2>KI-Anbietersuche läuft...</h2>
+        <p class="ai-sub" id="aiStatus">Durchsuche Datenbank nach passenden Anbietern in Ingolstadt...</p>
+      </div>
+
+      <!-- KI-Terminal -->
+      <div class="ai-terminal">
+        <div class="terminal-header">
+          <span class="terminal-dot red"></span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
+          <span class="terminal-title">KI-Analyse</span>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+          <!-- Zeilen werden per JS eingefügt -->
+        </div>
+      </div>
+
+      <!-- Anbieter-Karten (werden einzeln eingeblendet) -->
+      <div class="ai-results" id="aiResults">
+        <!-- Karten werden per JS erzeugt -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- KONTAKT-MODAL (erscheint bei "Jetzt anfragen") -->
+  <!-- ============================================ -->
+  <div class="modal-overlay hidden" id="contactModal">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-provider-header" id="modalProviderHeader"></div>
+      <h2>Kostenlose Anfrage an <span id="modalProviderName">Anbieter</span></h2>
+      <p class="modal-sub">Deine Daten werden nur an diesen Anbieter weitergeleitet.</p>
+
+      <form id="contactForm">
+        <div class="input-group">
+          <label for="c_name">Vor- und Nachname *</label>
+          <input type="text" id="c_name" name="name" placeholder="Max Mustermann" required>
+        </div>
+        <div class="input-row">
+          <div class="input-group">
+            <label for="c_email">E-Mail *</label>
+            <input type="email" id="c_email" name="email" placeholder="max@beispiel.de" required>
+          </div>
+          <div class="input-group">
+            <label for="c_phone">Telefon *</label>
+            <input type="tel" id="c_phone" name="phone" placeholder="0841 1234567" required>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="c_strasse">Straße + Hausnr.</label>
+          <input type="text" id="c_strasse" name="strasse" placeholder="Musterstraße 12">
+        </div>
+        <div class="input-row">
+          <div class="input-group">
+            <label for="c_plz">PLZ *</label>
+            <input type="text" id="c_plz" name="plz" placeholder="85049" required maxlength="5" pattern="[0-9]{5}">
+          </div>
+          <div class="input-group">
+            <label for="c_ort">Ort</label>
+            <input type="text" id="c_ort" name="ort" value="Ingolstadt">
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="c_nachricht">Nachricht (optional)</label>
+          <textarea id="c_nachricht" name="nachricht" rows="3" placeholder="Beschreibe kurz dein Anliegen..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-success btn-lg" style="width:100%;">
+          ✓ Unverbindlich anfragen
+        </button>
+        <p class="form-privacy">🔒 Deine Daten sind sicher. Keine Weitergabe an Dritte.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Erfolg -->
+  <div class="success-overlay hidden" id="successOverlay">
+    <div class="success-card">
+      <div class="success-icon">✅</div>
+      <h2>Anfrage erfolgreich gesendet!</h2>
+      <p>Der Anbieter wird sich innerhalb von 24 Stunden bei dir melden.</p>
+      <button class="btn btn-primary" id="successClose">Zurück zur Übersicht</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+      <a href="#">AGB</a>
+    </div>
+    <p>&copy; 2026 Finde dein bestes Angebot. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script src="assets/js/vergleich-v2.js"></script>
+</body>
+</html>

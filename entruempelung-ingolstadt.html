@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Entrümpelung in Ingolstadt – Vergleiche jetzt kostenlos Angebote von geprüften Entrümpelungsfirmen in Ingolstadt.">
+  <title>Entrümpelung in Ingolstadt – Angebote vergleichen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/vergleich.css">
+  <link rel="icon" href="assets/images/logo (4).png" type="image/png">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="header-logo">
+        <img src="assets/images/logo (4).png" alt="Bestes Angebot Logo">
+        <span>Angebotsvergleich</span>
+      </a>
+      <div class="header-rating">
+        <span class="stars">★★★★★</span>
+        <span>4,9/5</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="v-hero">
+    <div class="container">
+      <div class="trust-badge">✓ Kostenlos &amp; unverbindlich</div>
+      <h1>Entrümpelung in Ingolstadt<br><span>Jetzt Angebote vergleichen</span></h1>
+      <p>Finde in unter 2 Minuten den besten Entrümpelungsservice – geprüft, fair und aus deiner Region.</p>
+    </div>
+  </section>
+
+  <!-- Formular -->
+  <section class="form-section" id="formSection">
+    <div class="container">
+      <div class="form-card card">
+        <div class="form-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <span class="progress-text" id="progressText">Schritt 1 von 4</span>
+        </div>
+
+        <form id="leadForm" autocomplete="off">
+
+          <!-- Schritt 1: Was soll entrümpelt werden? -->
+          <div class="form-step active" data-step="1">
+            <h2>Was soll entrümpelt werden?</h2>
+            <div class="option-grid">
+              <label class="option-card">
+                <input type="radio" name="service" value="wohnung" required>
+                <div class="option-content">
+                  <span class="option-icon">🏠</span>
+                  <span class="option-label">Wohnung</span>
+                </div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="service" value="haus">
+                <div class="option-content">
+                  <span class="option-icon">🏡</span>
+                  <span class="option-label">Haus</span>
+                </div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="service" value="keller">
+                <div class="option-content">
+                  <span class="option-icon">📦</span>
+                  <span class="option-label">Keller</span>
+                </div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="service" value="dachboden">
+                <div class="option-content">
+                  <span class="option-icon">🏚️</span>
+                  <span class="option-label">Dachboden</span>
+                </div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="service" value="garage">
+                <div class="option-content">
+                  <span class="option-icon">🚗</span>
+                  <span class="option-label">Garage</span>
+                </div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="service" value="gewerbe">
+                <div class="option-content">
+                  <span class="option-icon">🏢</span>
+                  <span class="option-label">Gewerbe</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Schritt 2: Wie groß ist die Fläche? -->
+          <div class="form-step" data-step="2">
+            <h2>Wie groß ist die Fläche ca.?</h2>
+            <div class="option-grid">
+              <label class="option-card">
+                <input type="radio" name="size" value="klein" required>
+                <div class="option-content">
+                  <span class="option-icon">📐</span>
+                  <span class="option-label">Bis 30 m²</span>
+                </div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="size" value="mittel">
+                <div class="option-content">
+                  <span class="option-icon">📐</span>
+                  <span class="option-label">30 – 70 m²</span>
+                </div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="size" value="gross">
+                <div class="option-content">
+                  <span class="option-icon">📐</span>
+                  <span class="option-label">70 – 120 m²</span>
+                </div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="size" value="sehr-gross">
+                <div class="option-content">
+                  <span class="option-icon">📐</span>
+                  <span class="option-label">Über 120 m²</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Schritt 3: Wann soll es losgehen? -->
+          <div class="form-step" data-step="3">
+            <h2>Wann soll die Entrümpelung stattfinden?</h2>
+            <div class="option-grid">
+              <label class="option-card">
+                <input type="radio" name="timing" value="sofort" required>
+                <div class="option-content">
+                  <span class="option-icon">⚡</span>
+                  <span class="option-label">So schnell wie möglich</span>
+                </div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="timing" value="2wochen">
+                <div class="option-content">
+                  <span class="option-icon">📅</span>
+                  <span class="option-label">In den nächsten 2 Wochen</span>
+                </div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="timing" value="monat">
+                <div class="option-content">
+                  <span class="option-icon">🗓️</span>
+                  <span class="option-label">Innerhalb eines Monats</span>
+                </div>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="timing" value="flexibel">
+                <div class="option-content">
+                  <span class="option-icon">🤷</span>
+                  <span class="option-label">Bin flexibel</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Schritt 4: Kontaktdaten -->
+          <div class="form-step" data-step="4">
+            <h2>Fast geschafft! Wohin sollen wir die Angebote senden?</h2>
+            <p class="form-hint">Deine Daten werden nur an die ausgewählten Anbieter weitergeleitet.</p>
+            <div class="input-group">
+              <label for="name">Vor- und Nachname *</label>
+              <input type="text" id="name" name="name" placeholder="Max Mustermann" required>
+            </div>
+            <div class="input-row">
+              <div class="input-group">
+                <label for="email">E-Mail *</label>
+                <input type="email" id="email" name="email" placeholder="max@beispiel.de" required>
+              </div>
+              <div class="input-group">
+                <label for="phone">Telefon *</label>
+                <input type="tel" id="phone" name="phone" placeholder="0841 1234567" required>
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-group">
+                <label for="plz">Postleitzahl *</label>
+                <input type="text" id="plz" name="plz" placeholder="85049" required maxlength="5" pattern="[0-9]{5}">
+              </div>
+              <div class="input-group">
+                <label for="city">Stadt</label>
+                <input type="text" id="city" name="city" value="Ingolstadt" readonly>
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="message">Nachricht (optional)</label>
+              <textarea id="message" name="message" rows="3" placeholder="Beschreibe kurz dein Anliegen..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-success btn-lg" style="width:100%; margin-top: 1rem;">
+              🔍 Angebote vergleichen
+            </button>
+            <p class="form-privacy">🔒 Deine Daten sind sicher. Keine Weitergabe an Dritte.</p>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Live-Aktivität -->
+      <div class="live-activity">
+        <span class="live-dot"></span>
+        <span id="liveText">Gerade vergleichen 3 Personen aus Ingolstadt Angebote</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ladeanimation (zunächst versteckt) -->
+  <section class="loading-section hidden" id="loadingSection">
+    <div class="container">
+      <div class="loading-card card">
+        <div class="loading-spinner"></div>
+        <h2>Wir suchen die besten Angebote für dich...</h2>
+        <p class="loading-sub" id="loadingStatus">Anbieter in Ingolstadt werden kontaktiert...</p>
+        <div class="loading-steps">
+          <div class="loading-step" id="ls1">
+            <span class="step-check">⏳</span> Verfügbare Anbieter ermitteln...
+          </div>
+          <div class="loading-step" id="ls2">
+            <span class="step-check">⏳</span> Preise vergleichen...
+          </div>
+          <div class="loading-step" id="ls3">
+            <span class="step-check">⏳</span> Ergebnisse zusammenstellen...
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ergebnisse (zunächst versteckt) -->
+  <section class="results-section hidden" id="resultsSection">
+    <div class="container">
+      <div class="results-header">
+        <h2>🎉 <span id="resultCount">4</span> Anbieter gefunden in Ingolstadt</h2>
+        <p>Sortiert nach Preis-Leistung und Kundenzufriedenheit</p>
+      </div>
+
+      <!-- Empfehlung: Meisterwerk -->
+      <div class="result-card recommended" id="provider1">
+        <div class="recommended-badge">⭐ Unsere Empfehlung</div>
+        <div class="result-top">
+          <div class="result-logo">
+            <!-- Platzhalter für Meisterwerk-Logo -->
+            <div class="logo-placeholder meisterwerk">MW</div>
+          </div>
+          <div class="result-info">
+            <h3>Meisterwerk Entrümpelung</h3>
+            <div class="result-rating">
+              <span class="stars">★★★★★</span>
+              <span>4,9 (187 Bewertungen)</span>
+            </div>
+            <div class="result-tags">
+              <span class="tag tag-green">Bestpreis-Garantie</span>
+              <span class="tag tag-blue">Sofort verfügbar</span>
+              <span class="tag tag-gold">Top-Bewertet</span>
+            </div>
+          </div>
+          <div class="result-price">
+            <span class="price-label">ab</span>
+            <span class="price-value">289 €</span>
+            <span class="price-note">Festpreis</span>
+          </div>
+        </div>
+        <div class="result-features">
+          <span>✓ Kostenlose Besichtigung</span>
+          <span>✓ Besenreine Übergabe</span>
+          <span>✓ Entsorgungsnachweis</span>
+          <span>✓ Innerhalb 48h</span>
+        </div>
+        <button class="btn btn-success result-btn" data-provider="meisterwerk">
+          Jetzt anfragen →
+        </button>
+      </div>
+
+      <!-- Anbieter 2 -->
+      <div class="result-card" id="provider2">
+        <div class="result-top">
+          <div class="result-logo">
+            <div class="logo-placeholder">RE</div>
+          </div>
+          <div class="result-info">
+            <h3>Räum Express Ingolstadt</h3>
+            <div class="result-rating">
+              <span class="stars">★★★★☆</span>
+              <span>4,2 (93 Bewertungen)</span>
+            </div>
+            <div class="result-tags">
+              <span class="tag tag-blue">Schneller Service</span>
+            </div>
+          </div>
+          <div class="result-price">
+            <span class="price-label">ab</span>
+            <span class="price-value">349 €</span>
+            <span class="price-note">Schätzpreis</span>
+          </div>
+        </div>
+        <div class="result-features">
+          <span>✓ Besichtigung möglich</span>
+          <span>✓ Entsorgung inklusive</span>
+        </div>
+        <button class="btn btn-primary result-btn" data-provider="raeum-express">
+          Jetzt anfragen →
+        </button>
+      </div>
+
+      <!-- Anbieter 3 -->
+      <div class="result-card" id="provider3">
+        <div class="result-top">
+          <div class="result-logo">
+            <div class="logo-placeholder">SE</div>
+          </div>
+          <div class="result-info">
+            <h3>Sauber & Entrümpelt GmbH</h3>
+            <div class="result-rating">
+              <span class="stars">★★★★☆</span>
+              <span>4,0 (64 Bewertungen)</span>
+            </div>
+            <div class="result-tags">
+              <span class="tag tag-blue">Familienunternehmen</span>
+            </div>
+          </div>
+          <div class="result-price">
+            <span class="price-label">ab</span>
+            <span class="price-value">399 €</span>
+            <span class="price-note">Schätzpreis</span>
+          </div>
+        </div>
+        <div class="result-features">
+          <span>✓ Wertanrechnung möglich</span>
+          <span>✓ Umweltgerechte Entsorgung</span>
+        </div>
+        <button class="btn btn-primary result-btn" data-provider="sauber-entruempelt">
+          Jetzt anfragen →
+        </button>
+      </div>
+
+      <!-- Anbieter 4 -->
+      <div class="result-card" id="provider4">
+        <div class="result-top">
+          <div class="result-logo">
+            <div class="logo-placeholder">KE</div>
+          </div>
+          <div class="result-info">
+            <h3>König Entrümpelung</h3>
+            <div class="result-rating">
+              <span class="stars">★★★☆☆</span>
+              <span>3,7 (41 Bewertungen)</span>
+            </div>
+            <div class="result-tags">
+              <span class="tag tag-blue">Günstige Option</span>
+            </div>
+          </div>
+          <div class="result-price">
+            <span class="price-label">ab</span>
+            <span class="price-value">429 €</span>
+            <span class="price-note">Schätzpreis</span>
+          </div>
+        </div>
+        <div class="result-features">
+          <span>✓ Entsorgung inklusive</span>
+        </div>
+        <button class="btn btn-primary result-btn" data-provider="koenig">
+          Jetzt anfragen →
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Anfrage-Modal -->
+  <div class="modal-overlay hidden" id="modalOverlay">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <h2>Anfrage an <span id="modalProvider">Anbieter</span></h2>
+      <p>Deine Kontaktdaten werden an den Anbieter weitergeleitet. Du erhältst in Kürze ein unverbindliches Angebot.</p>
+      <div class="modal-summary" id="modalSummary"></div>
+      <button class="btn btn-success btn-lg" style="width:100%;" id="modalConfirm">
+        ✓ Anfrage jetzt absenden
+      </button>
+      <p class="form-privacy">🔒 Kostenlos &amp; unverbindlich</p>
+    </div>
+  </div>
+
+  <!-- Erfolgs-Nachricht -->
+  <div class="success-overlay hidden" id="successOverlay">
+    <div class="success-card">
+      <div class="success-icon">✅</div>
+      <h2>Anfrage erfolgreich gesendet!</h2>
+      <p>Der Anbieter wird sich in Kürze bei dir melden.</p>
+      <button class="btn btn-primary" id="successClose">Zurück zur Übersicht</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+      <a href="#">AGB</a>
+    </div>
+    <p>&copy; 2026 Finde dein bestes Angebot. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script src="assets/js/vergleich.js"></script>
+</body>
+</html>
