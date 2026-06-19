@@ -17,6 +17,71 @@ function formatValue(value) {
   return value || "-";
 }
 
+function normalizePhoneNumber(value) {
+  return String(value || "").replace(/[^\d+]/g, "");
+}
+
+function toWhatsAppNumber(value) {
+  const normalized = normalizePhoneNumber(value);
+  if (!normalized) return "";
+  if (normalized.startsWith("+")) return normalized.slice(1);
+  if (normalized.startsWith("00")) return normalized.slice(2);
+  if (normalized.startsWith("0")) return `49${normalized.slice(1)}`;
+  return normalized;
+}
+
+function isLikelyMobileNumber(value) {
+  const normalized = normalizePhoneNumber(value);
+  return /^(\+49|0049|0)1[5-7]\d{7,12}$/.test(normalized);
+}
+
+function getContactValue(contact, keys) {
+  const foundKey = Object.keys(contact || {}).find((key) => keys.includes(key.toLowerCase()));
+  return foundKey ? contact[foundKey] : "";
+}
+
+function getActionLinks(contact) {
+  const phone = getContactValue(contact, ["phone", "telefon", "tel", "rufnummer"]);
+  const mobile = getContactValue(contact, ["mobile", "mobil", "handy", "handynummer", "whatsapp"]);
+  const email = getContactValue(contact, ["email", "e-mail", "mail"]);
+  const whatsappSource = mobile || (isLikelyMobileNumber(phone) ? phone : "");
+
+  return {
+    phone,
+    mobile,
+    email,
+    whatsappNumber: toWhatsAppNumber(whatsappSource)
+  };
+}
+
+function renderButton(label, href, background, color = "#ffffff") {
+  if (!href) return "";
+
+  return `
+    <a href="${escapeHtml(href)}" style="display:inline-block;margin:6px 8px 6px 0;padding:12px 18px;border-radius:8px;background:${background};color:${color};font-family:Arial,sans-serif;font-size:14px;font-weight:700;text-decoration:none;">
+      ${escapeHtml(label)}
+    </a>
+  `;
+}
+
+function renderActionButtons(contact) {
+  const actions = getActionLinks(contact);
+  const phoneHref = actions.phone ? `tel:${normalizePhoneNumber(actions.phone)}` : "";
+  const whatsappHref = actions.whatsappNumber ? `https://wa.me/${actions.whatsappNumber}` : "";
+  const emailHref = actions.email ? `mailto:${actions.email}` : "";
+
+  if (!phoneHref && !whatsappHref && !emailHref) return "";
+
+  return `
+    <div style="margin:22px 0 8px;padding:18px;border-radius:12px;background:#f8fafc;border:1px solid #e5e7eb;">
+      <p style="margin:0 0 10px;color:#475569;font-family:Arial,sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;">Direkt kontaktieren</p>
+      ${renderButton("Anrufen", phoneHref, "#2563eb")}
+      ${renderButton("WhatsApp", whatsappHref, "#16a34a")}
+      ${renderButton("E-Mail schreiben", emailHref, "#111827")}
+    </div>
+  `;
+}
+
 function renderTable(title, data) {
   if (!data || typeof data !== "object") return "";
 
@@ -30,6 +95,35 @@ function renderTable(title, data) {
   return `
     <h3 style="margin:24px 0 8px;">${escapeHtml(title)}</h3>
     <table style="border-collapse:collapse;width:100%;font-family:Arial,sans-serif;font-size:14px;">${rows}</table>
+  `;
+}
+
+function renderLeadEmail({ contact, lead, providerName, providerId, createdAt }) {
+  return `
+    <div style="margin:0;padding:0;background:#eef2f7;">
+      <div style="max-width:680px;margin:0 auto;padding:28px 14px;font-family:Arial,sans-serif;color:#111827;line-height:1.5;">
+        <div style="overflow:hidden;border-radius:16px;background:#ffffff;border:1px solid #dbe3ef;box-shadow:0 14px 36px rgba(15,23,42,.10);">
+          <div style="padding:26px 28px;background:#0f172a;color:#ffffff;">
+            <p style="margin:0 0 8px;color:#93c5fd;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;">Neue Anfrage</p>
+            <h1 style="margin:0;font-size:26px;line-height:1.2;">${escapeHtml(providerName)}</h1>
+            <p style="margin:10px 0 0;color:#cbd5e1;font-size:14px;">Eingegangen am ${escapeHtml(createdAt)}</p>
+          </div>
+
+          <div style="padding:26px 28px;">
+            <div style="padding:18px;border-radius:12px;background:#eff6ff;border:1px solid #bfdbfe;">
+              <p style="margin:0;color:#1e3a8a;font-size:14px;">Ein neuer Lead wurde ueber finde-dein-bestes-angebot.de erfasst.</p>
+            </div>
+
+            ${renderActionButtons(contact)}
+            ${renderTable("Kontaktdaten", contact)}
+            ${renderTable("Ausgewaehlter Anbieter", { provider: providerName, providerId })}
+            ${renderTable("Projektangaben", lead.quiz || lead)}
+
+            <p style="margin:26px 0 0;color:#64748b;font-size:12px;">Diese E-Mail wurde automatisch durch das Anfrageformular erstellt.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   `;
 }
 
@@ -73,16 +167,7 @@ module.exports = async function handler(req, res) {
   const providerId = lead.providerId || "";
   const createdAt = new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" });
   const subject = `Neue Anfrage: ${providerName}`;
-
-  const html = `
-    <div style="font-family:Arial,sans-serif;color:#111827;line-height:1.5;">
-      <h2 style="margin:0 0 8px;">Neue Anfrage ueber finde-dein-bestes-angebot.de</h2>
-      <p style="margin:0 0 16px;color:#4b5563;">Eingegangen am ${escapeHtml(createdAt)}</p>
-      ${renderTable("Kontaktdaten", contact)}
-      ${renderTable("Ausgewaehlter Anbieter", { provider: providerName, providerId })}
-      ${renderTable("Projektangaben", lead.quiz || lead)}
-    </div>
-  `;
+  const html = renderLeadEmail({ contact, lead, providerName, providerId, createdAt });
 
   const recipients = [
     process.env.LEAD_NOTIFICATION_EMAIL,
