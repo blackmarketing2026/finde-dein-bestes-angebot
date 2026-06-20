@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Übersicht aller Seiten von Finde dein bestes Angebot.">
+  <title>Seitenübersicht – Finde dein bestes Angebot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="icon" href="assets/images/logo (4).png" type="image/png">
+  <style>
+    .page-list-section {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 60px 20px 80px;
+    }
+
+    .page-list-section h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .page-list-section .subtitle {
+      color: var(--color-text-light);
+      margin-bottom: 40px;
+    }
+
+    .page-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .page-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 18px 24px;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .page-item:hover {
+      border-color: var(--color-primary);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+    }
+
+    .page-item-name {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--color-text);
+    }
+
+    .page-item-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--color-primary);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 8px 18px;
+      border-radius: 8px;
+      transition: background 0.2s;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .page-item-link:hover {
+      background: var(--color-primary-dark);
+      color: #fff;
+    }
+
+    .page-item-link svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    @media (max-width: 500px) {
+      .page-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .page-item-link {
+        align-self: flex-end;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="header-logo">
+        <img src="assets/images/logo (4).png" alt="Bestes Angebot Logo">
+        <span>Angebotsvergleich</span>
+      </a>
+      <div class="header-rating">
+        <span class="stars">★★★★★</span>
+        <span>4,9/5</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-list-section">
+    <h1>Seitenübersicht</h1>
+    <p class="subtitle">Alle Seiten auf einen Blick</p>
+
+    <div class="page-list">
+
+      <div class="page-item">
+        <span class="page-item-name">AGB</span>
+        <a href="agb.html" target="_blank" rel="noopener" class="page-item-link">
+          Öffnen
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 1 1.5 0v4A2.25 2.25 0 0 1 12.75 17h-8.5A2.25 2.25 0 0 1 2 14.75v-8.5A2.25 2.25 0 0 1 4.25 4h5a.75.75 0 0 1 0 1.5h-5Zm7.25-.182a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 1 1-1.06-1.06l5.22-5.22h-2.19a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd"/></svg>
+        </a>
+      </div>
+
+      <div class="page-item">
+        <span class="page-item-name">Entrümpelung Ingolstadt</span>
+        <a href="entruempelung-ingolstadt.html" target="_blank" rel="noopener" class="page-item-link">
+          Öffnen
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 1 1.5 0v4A2.25 2.25 0 0 1 12.75 17h-8.5A2.25 2.25 0 0 1 2 14.75v-8.5A2.25 2.25 0 0 1 4.25 4h5a.75.75 0 0 1 0 1.5h-5Zm7.25-.182a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 1 1-1.06-1.06l5.22-5.22h-2.19a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd"/></svg>
+        </a>
+      </div>
+
+      <div class="page-item">
+        <span class="page-item-name">Entrümpelung Ingolstadt (V2)</span>
+        <a href="entruempelung-ingolstadt-v2.html" target="_blank" rel="noopener" class="page-item-link">
+          Öffnen
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 1 1.5 0v4A2.25 2.25 0 0 1 12.75 17h-8.5A2.25 2.25 0 0 1 2 14.75v-8.5A2.25 2.25 0 0 1 4.25 4h5a.75.75 0 0 1 0 1.5h-5Zm7.25-.182a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 1 1-1.06-1.06l5.22-5.22h-2.19a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd"/></svg>
+        </a>
+      </div>
+
+      <div class="page-item">
+        <span class="page-item-name">Startseite</span>
+        <a href="index.html" target="_blank" rel="noopener" class="page-item-link">
+          Öffnen
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 1 1.5 0v4A2.25 2.25 0 0 1 12.75 17h-8.5A2.25 2.25 0 0 1 2 14.75v-8.5A2.25 2.25 0 0 1 4.25 4h5a.75.75 0 0 1 0 1.5h-5Zm7.25-.182a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 1 1-1.06-1.06l5.22-5.22h-2.19a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="index.html">Startseite</a>
+      <a href="seiten.html">Seitenübersicht</a>
+      <a href="https://function-concept.com/impressum">Impressum</a>
+      <a href="https://function-concept.com/datenschutz">Datenschutz</a>
+      <a href="agb.html">AGB</a>
+    </div>
+    <p>&copy; 2026 Finde dein bestes Angebot. Alle Rechte vorbehalten.</p>
+  </footer>
+
+</body>
+</html>
