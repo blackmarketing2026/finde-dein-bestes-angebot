@@ -44,9 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     sessionStorage.setItem("quizData", JSON.stringify(quizData));
 
+    document.body.classList.add("search-active");
     document.getElementById("quizSection").classList.add("hidden");
     document.getElementById("aiSection").classList.remove("hidden");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    document.getElementById("aiSection").scrollIntoView({ behavior: "smooth", block: "start" });
 
     startAISearch(quizData);
   });
