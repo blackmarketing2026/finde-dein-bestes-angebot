@@ -63,8 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
       rating: "4,9",
       reviews: 187,
       stars: "★★★★★",
-      price: "289 €",
-      priceNote: "Festpreis",
       tags: [
         { text: "Bestpreis-Garantie", cls: "tag-green" },
         { text: "Sofort verfügbar", cls: "tag-blue" },
@@ -81,8 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
       rating: "4,2",
       reviews: 93,
       stars: "★★★★☆",
-      price: "349 €",
-      priceNote: "Schätzpreis",
       tags: [{ text: "Schneller Service", cls: "tag-blue" }],
       features: ["Besichtigung möglich", "Entsorgung inklusive"],
       recommended: false
@@ -95,8 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
       rating: "4,0",
       reviews: 64,
       stars: "★★★★☆",
-      price: "399 €",
-      priceNote: "Schätzpreis",
       tags: [{ text: "Familienunternehmen", cls: "tag-blue" }],
       features: ["Wertanrechnung möglich", "Umweltgerechte Entsorgung"],
       recommended: false
@@ -109,8 +103,6 @@ document.addEventListener("DOMContentLoaded", function () {
       rating: "3,7",
       reviews: 41,
       stars: "★★★☆☆",
-      price: "429 €",
-      priceNote: "Schätzpreis",
       tags: [{ text: "Günstige Option", cls: "tag-blue" }],
       features: ["Entsorgung inklusive"],
       recommended: false
@@ -132,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
       { text: "> Standort: Ingolstadt (Region 09)", cls: "", delay: 800 },
       { text: "> Objekt: " + objektLabel.charAt(0).toUpperCase() + objektLabel.slice(1) + " | Fläche: " + flaecheLabel, cls: "", delay: 1200 },
       { text: "> Durchsuche 47 registrierte Anbieter...", cls: "info", delay: 2000 },
-      { text: "> Filter: Verfügbarkeit, Bewertungen, Preis...", cls: "", delay: 2800 },
+      { text: "> Filter: Verfügbarkeit, Bewertungen, Leistungen...", cls: "", delay: 2800 },
       { text: "> ✓ Anbieter 1 gefunden: Meisterwerk Entrümpelung", cls: "success", delay: 4000 },
       { text: "> Suche weitere Anbieter...", cls: "info", delay: 5500 },
       { text: "> ✓ Anbieter 2 gefunden: Räum Express Ingolstadt", cls: "success", delay: 7000 },
@@ -142,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
       { text: "> ✓ Anbieter 4 gefunden: König Entrümpelung", cls: "success", delay: 11800 },
       { text: "> ══════════════════════════════════════", cls: "", delay: 12500 },
       { text: "> Analyse abgeschlossen. 4 passende Anbieter.", cls: "highlight", delay: 13000 },
-      { text: "> Empfehlung: Meisterwerk Entrümpelung (Bestpreis)", cls: "highlight", delay: 13500 }
+      { text: "> Empfehlung: Meisterwerk Entrümpelung (Top-Bewertet)", cls: "highlight", delay: 13500 }
     ];
 
     // Terminal-Zeilen tippen
@@ -212,11 +204,6 @@ document.addEventListener("DOMContentLoaded", function () {
       html += '      <span class="tag ' + tag.cls + '">' + tag.text + '</span>';
     });
     html += '    </div>';
-    html += '  </div>';
-    html += '  <div class="result-price">';
-    html += '    <span class="price-label">ab</span>';
-    html += '    <span class="price-value">' + prov.price + '</span>';
-    html += '    <span class="price-note">' + prov.priceNote + '</span>';
     html += '  </div>';
     html += '</div>';
 
