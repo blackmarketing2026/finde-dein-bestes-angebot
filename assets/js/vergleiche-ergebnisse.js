@@ -39,6 +39,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // Animate cards in one by one
+  var animCards = document.querySelectorAll(".anim-card");
+  var resultsCount = document.getElementById("resultsCount");
+
+  function animateCardsIn() {
+    if (resultsCount) {
+      resultsCount.classList.remove("hidden");
+    }
+    animCards.forEach(function (card, i) {
+      setTimeout(function () {
+        card.classList.add("visible");
+      }, 400 + i * 350);
+    });
+  }
+
+  setTimeout(animateCardsIn, 300);
+
   // If no quiz data, redirect back
   if (Object.keys(quizData).length === 0) {
     var resultsSection = document.getElementById("resultsSection");
