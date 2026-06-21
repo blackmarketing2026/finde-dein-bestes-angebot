@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-ML5WLPHQ');</script>
+  <!-- End Google Tag Manager -->
+  <meta name="description" content="Deine Vergleichsergebnisse – passende Umzugsfirmen auf einen Blick.">
+  <title>Vergleichsergebnisse – Umzugsangebote</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/vergleiche.css">
+  <link rel="icon" href="assets/images/logo (4).png" type="image/png">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ML5WLPHQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo">
+        <img src="assets/images/logo (4).png" alt="Bestes Angebot Logo">
+        <span>Angebotsvergleich</span>
+      </a>
+      <div class="header-rating">
+        <span class="stars">★★★★★</span>
+        <span>4,9/5</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Results Hero -->
+  <section class="vgl-results-hero">
+    <div class="container">
+      <h1>Deine Umzugs-Vergleichsergebnisse</h1>
+      <p>Basierend auf deinen Angaben haben wir passende Umzugsfirmen gefunden.</p>
+      <div class="quiz-summary" id="quizSummary"></div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="vgl-results" id="resultsSection">
+    <p class="results-count hidden" id="resultsCount"><strong>4 Anbieter</strong> passen zu deinem Umzug</p>
+
+    <!-- Meisterwerk – Top-Empfehlung -->
+    <div class="provider-card top-pick anim-card" data-provider-id="meisterwerk" data-provider-name="Meisterwerk">
+      <div class="top-pick-badge">⭐ Top-Empfehlung</div>
+      <div class="provider-top">
+        <div class="provider-logo">
+          <img src="assets/images/meisterwerk-logo.png" alt="Meisterwerk Logo">
+        </div>
+        <div class="provider-info">
+          <h3>Meisterwerk</h3>
+          <div class="provider-rating">
+            <span class="stars">★★★★★</span>
+            <span>4,9 (214 Bewertungen)</span>
+          </div>
+          <div class="provider-tags">
+            <span class="p-tag p-tag-green">Bestpreis-Garantie</span>
+            <span class="p-tag p-tag-blue">Sofort verfügbar</span>
+            <span class="p-tag p-tag-gold">Top-Bewertet</span>
+          </div>
+        </div>
+      </div>
+      <div class="provider-features">
+        <span>✓ Kostenlose Besichtigung</span>
+        <span>✓ Möbelmontage inklusive</span>
+        <span>✓ Halteverbotszone</span>
+        <span>✓ Versicherter Transport</span>
+      </div>
+      <button class="provider-cta-btn primary" data-action="contact">Kostenloses Angebot anfragen →</button>
+    </div>
+
+    <!-- FlitzUmzug -->
+    <div class="provider-card anim-card" data-provider-id="flitz-umzug" data-provider-name="FlitzUmzug">
+      <div class="provider-top">
+        <div class="provider-logo-text">FU</div>
+        <div class="provider-info">
+          <h3>FlitzUmzug</h3>
+          <div class="provider-rating">
+            <span class="stars">★★★★☆</span>
+            <span>4,3 (108 Bewertungen)</span>
+          </div>
+          <div class="provider-tags">
+            <span class="p-tag p-tag-blue">Express-Service</span>
+          </div>
+        </div>
+      </div>
+      <div class="provider-features">
+        <span>✓ Kurzfristig verfügbar</span>
+        <span>✓ Versicherter Transport</span>
+      </div>
+      <button class="provider-cta-btn secondary" data-action="contact">Angebot anfragen</button>
+    </div>
+
+    <!-- Heimat Umzüge -->
+    <div class="provider-card anim-card" data-provider-id="heimat-umzuege" data-provider-name="Heimat Umzüge GmbH">
+      <div class="provider-top">
+        <div class="provider-logo-text">HU</div>
+        <div class="provider-info">
+          <h3>Heimat Umzüge GmbH</h3>
+          <div class="provider-rating">
+            <span class="stars">★★★★☆</span>
+            <span>4,1 (76 Bewertungen)</span>
+          </div>
+          <div class="provider-tags">
+            <span class="p-tag p-tag-blue">Familienunternehmen</span>
+          </div>
+        </div>
+      </div>
+      <div class="provider-features">
+        <span>✓ Ein- &amp; Auspacken</span>
+        <span>✓ Seniorenumzüge</span>
+      </div>
+      <button class="provider-cta-btn secondary" data-action="contact">Angebot anfragen</button>
+    </div>
+
+    <!-- Budget Umzug -->
+    <div class="provider-card anim-card" data-provider-id="budget-umzug" data-provider-name="Budget Umzug">
+      <div class="provider-top">
+        <div class="provider-logo-text">BU</div>
+        <div class="provider-info">
+          <h3>Budget Umzug</h3>
+          <div class="provider-rating">
+            <span class="stars">★★★☆☆</span>
+            <span>3,8 (52 Bewertungen)</span>
+          </div>
+          <div class="provider-tags">
+            <span class="p-tag p-tag-blue">Günstige Option</span>
+          </div>
+        </div>
+      </div>
+      <div class="provider-features">
+        <span>✓ Studentenrabatt</span>
+      </div>
+      <button class="provider-cta-btn secondary" data-action="contact">Angebot anfragen</button>
+    </div>
+  </section>
+
+  <!-- Contact Modal -->
+  <div class="vgl-modal-overlay hidden" id="contactModal">
+    <div class="vgl-modal">
+      <button class="vgl-modal-close" id="modalClose">&times;</button>
+      <div class="vgl-modal-provider" id="modalProvider"></div>
+      <h2>Kostenlose Anfrage senden</h2>
+      <p class="modal-desc">Vervollständige deine Angaben, damit der Anbieter dir ein passendes Umzugsangebot erstellen kann.</p>
+
+      <form id="contactForm" autocomplete="on">
+        <div class="vgl-form-group">
+          <label for="c_name">Vor- und Nachname *</label>
+          <input type="text" id="c_name" name="name" placeholder="Max Mustermann" required>
+        </div>
+        <div class="vgl-form-row">
+          <div class="vgl-form-group">
+            <label for="c_email">E-Mail *</label>
+            <input type="email" id="c_email" name="email" placeholder="max@beispiel.de" required>
+          </div>
+          <div class="vgl-form-group">
+            <label for="c_phone">Telefon *</label>
+            <input type="tel" id="c_phone" name="phone" placeholder="0151 1234567" required>
+          </div>
+        </div>
+        <div class="vgl-form-group">
+          <label for="c_strasse">Straße + Hausnr.</label>
+          <input type="text" id="c_strasse" name="strasse" placeholder="Musterstraße 12">
+        </div>
+        <div class="vgl-form-row">
+          <div class="vgl-form-group">
+            <label for="c_plz">PLZ *</label>
+            <input type="text" id="c_plz" name="plz" placeholder="85049" required maxlength="5" pattern="[0-9]{5}" inputmode="numeric">
+          </div>
+          <div class="vgl-form-group">
+            <label for="c_ort">Ort</label>
+            <input type="text" id="c_ort" name="ort" placeholder="Musterstadt">
+          </div>
+        </div>
+        <div class="vgl-form-group">
+          <label for="c_nachricht">Nachricht (optional)</label>
+          <textarea id="c_nachricht" name="nachricht" rows="3" placeholder="Gibt es etwas, das der Anbieter wissen sollte?"></textarea>
+        </div>
+        <button type="submit" class="vgl-form-submit" id="submitBtn">✓ Unverbindlich anfragen</button>
+        <p class="vgl-form-privacy">🔒 Deine Daten werden nur an den ausgewählten Anbieter weitergeleitet.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Overlay -->
+  <div class="vgl-success-overlay hidden" id="successOverlay">
+    <div class="vgl-success-card">
+      <div class="success-check">✅</div>
+      <h2>Anfrage erfolgreich gesendet!</h2>
+      <p>Der Anbieter wird sich innerhalb von 24 Stunden bei dir melden.</p>
+      <button class="btn btn-primary" id="successClose">Zurück zur Übersicht</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="/">Startseite</a>
+      <a href="/seiten">Seitenübersicht</a>
+      <a href="https://function-concept.com/impressum">Impressum</a>
+      <a href="https://function-concept.com/datenschutz">Datenschutz</a>
+      <a href="/agb">AGB</a>
+    </div>
+    <p>&copy; 2026 Finde dein bestes Angebot. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script src="assets/js/umzug-ergebnisse.js"></script>
+</body>
+</html>
