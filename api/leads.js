@@ -185,21 +185,6 @@ module.exports = async function handler(req, res) {
       html
     }));
 
-    if (process.env.SEND_CUSTOMER_CONFIRMATION !== "false") {
-      sent.push(await sendEmail({
-        from: process.env.RESEND_FROM_EMAIL,
-        to: [contact.email],
-        subject: "Deine Anfrage ist eingegangen",
-        html: `
-          <div style="font-family:Arial,sans-serif;color:#111827;line-height:1.5;">
-            <h2>Danke fuer deine Anfrage, ${escapeHtml(contact.name)}.</h2>
-            <p>Wir haben deine Anfrage an ${escapeHtml(providerName)} erhalten. Der Anbieter oder unser Team meldet sich in Kuerze bei dir.</p>
-            <p style="color:#4b5563;">Falls du noch etwas ergaenzen moechtest, antworte einfach auf diese E-Mail.</p>
-          </div>
-        `
-      }));
-    }
-
     return res.status(200).json({ ok: true, sent: sent.map((item) => item.id) });
   } catch (error) {
     console.error("Resend error:", error);
