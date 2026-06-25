@@ -79,13 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     sessionStorage.setItem("umzugQuizData", JSON.stringify(quizData));
 
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "form_submit",
-      form_type: "quiz",
-      form_page: "umzugsangebote-vergleiche"
-    });
-
     window.location.href = "/umzugsangebote-ergebnisse";
   });
 

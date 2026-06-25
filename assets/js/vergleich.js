@@ -44,12 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Daten im sessionStorage speichern
     sessionStorage.setItem("leadData", JSON.stringify(data));
 
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "form_submit",
-      form_type: "quiz"
-    });
-
     // Formular ausblenden, Ladeanimation zeigen
     formSection.classList.add("hidden");
     loadingSection.classList.remove("hidden");

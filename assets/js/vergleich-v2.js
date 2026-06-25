@@ -44,12 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     sessionStorage.setItem("quizData", JSON.stringify(quizData));
 
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "form_submit",
-      form_type: "quiz"
-    });
-
     document.body.classList.add("search-active");
     document.getElementById("quizSection").classList.add("hidden");
     document.getElementById("aiSection").classList.remove("hidden");

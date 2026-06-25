@@ -67,13 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     sessionStorage.setItem("vglQuizData", JSON.stringify(quizData));
 
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "form_submit",
-      form_type: "quiz",
-      form_page: "entruempelungsangebote-vergleiche"
-    });
-
     window.location.href = "/entruempelungsangebote-ergebnisse";
   });
 
