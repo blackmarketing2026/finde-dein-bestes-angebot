@@ -26,6 +26,11 @@ document.addEventListener("DOMContentLoaded", function () {
     currentStep = step;
     progressFill.style.width = (step / totalSteps * 100) + "%";
     progressText.textContent = "Schritt " + step + " von " + totalSteps;
+
+    if (step === 2) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "vergleich_gestartet" });
+    }
   }
 
   // Quiz absenden -> KI-Animation starten

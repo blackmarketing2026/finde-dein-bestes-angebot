@@ -14,6 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
     progressFill.style.width = (step / totalSteps * 100) + "%";
     progressLabel.textContent = "Schritt " + step + " von " + totalSteps;
 
+    if (step === 2) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "vergleich_gestartet" });
+    }
+
     if (step > 1) {
       backBtn.classList.remove("hidden");
     } else {
