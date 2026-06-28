@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
-        event: "form_submit",
+        event: "lead_submit",
         form_type: "lead",
         form_page: "umzugsangebote-ergebnisse",
         provider: lead.provider
@@ -171,4 +171,65 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("successClose").addEventListener("click", function () {
     document.getElementById("successOverlay").classList.add("hidden");
   });
+
+  // Bulk contact form – send to all providers
+  var bulkForm = document.getElementById("bulkContactForm");
+  if (bulkForm) {
+    bulkForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      var bulkBtn = document.getElementById("bulkSubmitBtn");
+      var originalBulkText = bulkBtn.textContent;
+      bulkBtn.disabled = true;
+      bulkBtn.textContent = "Wird gesendet...";
+
+      var contactData = {};
+      new FormData(this).forEach(function (val, key) { contactData[key] = val; });
+
+      var allProviders = [];
+      document.querySelectorAll(".provider-card").forEach(function (card) {
+        allProviders.push({
+          id: card.dataset.providerId,
+          name: card.dataset.providerName
+        });
+      });
+
+      var lead = {
+        quiz: quizData,
+        contact: contactData,
+        provider: "Sammelanfrage – alle Anbieter",
+        providers: allProviders.map(function (p) { return p.name; }),
+        source: "umzugsangebote-ergebnisse-bulk",
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        var response = await fetch("/api/leads", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(lead)
+        });
+
+        if (!response.ok) {
+          throw new Error("Anfrage konnte nicht gesendet werden.");
+        }
+
+        bulkForm.reset();
+        document.getElementById("successOverlay").classList.remove("hidden");
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "lead_submit",
+          form_type: "bulk_lead",
+          form_page: "umzugsangebote-ergebnisse",
+          provider: "alle"
+        });
+      } catch (error) {
+        console.error("Lead konnte nicht gesendet werden:", error);
+        alert("Die Anfrage konnte gerade nicht gesendet werden. Bitte versuche es gleich erneut.");
+      } finally {
+        bulkBtn.disabled = false;
+        bulkBtn.textContent = originalBulkText;
+      }
+    });
+  }
 });

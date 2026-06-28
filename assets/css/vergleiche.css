@@ -723,6 +723,107 @@
 }
 
 /* ============================
+   BULK REQUEST SECTION
+   ============================ */
+.vgl-bulk-section {
+  padding: 0 1rem 2.5rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.bulk-card {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  color: #fff;
+}
+
+.bulk-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.bulk-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.bulk-header h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.bulk-header p {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.5;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.bulk-card .vgl-form-group label {
+  color: rgba(255,255,255,0.9);
+}
+
+.bulk-card .vgl-form-group input,
+.bulk-card .vgl-form-group textarea {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+.bulk-card .vgl-form-group input::placeholder,
+.bulk-card .vgl-form-group textarea::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+.bulk-card .vgl-form-group input:focus,
+.bulk-card .vgl-form-group textarea:focus {
+  border-color: #67e8f9;
+  box-shadow: 0 0 0 3px rgba(103,232,249,0.15);
+  background: rgba(255,255,255,0.15);
+}
+
+.bulk-card .vgl-form-submit {
+  background: var(--color-secondary);
+  margin-top: 0.75rem;
+  font-size: 1.05rem;
+  padding: 1rem;
+}
+
+.bulk-card .vgl-form-submit:hover {
+  background: var(--color-secondary-dark);
+}
+
+.bulk-card .vgl-form-privacy {
+  color: rgba(255,255,255,0.55);
+}
+
+@media (min-width: 769px) {
+  .bulk-card {
+    padding: 2.5rem 2.5rem;
+  }
+
+  .bulk-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bulk-card .vgl-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================
    CONTACT MODAL (Results page)
    ============================ */
 .vgl-modal-overlay {

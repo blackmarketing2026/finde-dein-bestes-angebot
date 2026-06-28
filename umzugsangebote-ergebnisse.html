@@ -83,7 +83,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- FlitzUmzug -->
     <div class="provider-card anim-card" data-provider-id="flitz-umzug" data-provider-name="FlitzUmzug">
       <div class="provider-top">
-        <div class="provider-logo-text">FU</div>
+        <div class="provider-logo">
+          <img src="assets/images/flitz-umzug-logo.webp" alt="FlitzUmzug Logo">
+        </div>
         <div class="provider-info">
           <h3>FlitzUmzug</h3>
           <div class="provider-rating">
@@ -102,24 +104,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <button class="provider-cta-btn secondary" data-action="contact">Angebot anfragen</button>
     </div>
 
-    <!-- Heimat Umzüge -->
-    <div class="provider-card anim-card" data-provider-id="heimat-umzuege" data-provider-name="Heimat Umzüge GmbH">
+    <!-- Festpreis Umzüge -->
+    <div class="provider-card anim-card" data-provider-id="festpreis-umzuege" data-provider-name="Festpreis Umzüge">
       <div class="provider-top">
-        <div class="provider-logo-text">HU</div>
+        <div class="provider-logo">
+          <img src="assets/images/festpreis-umzuege-logo.webp" alt="Festpreis Umzüge Logo">
+        </div>
         <div class="provider-info">
-          <h3>Heimat Umzüge GmbH</h3>
+          <h3>Festpreis Umzüge</h3>
           <div class="provider-rating">
             <span class="stars">★★★★☆</span>
-            <span>4,1 (76 Bewertungen)</span>
+            <span>4,2 (89 Bewertungen)</span>
           </div>
           <div class="provider-tags">
-            <span class="p-tag p-tag-blue">Familienunternehmen</span>
+            <span class="p-tag p-tag-green">Festpreis-Garantie</span>
+            <span class="p-tag p-tag-blue">Keine versteckten Kosten</span>
           </div>
         </div>
       </div>
       <div class="provider-features">
-        <span>✓ Ein- &amp; Auspacken</span>
-        <span>✓ Seniorenumzüge</span>
+        <span>✓ Festpreis ohne Nachzahlung</span>
+        <span>✓ Kostenlose Besichtigung</span>
       </div>
       <button class="provider-cta-btn secondary" data-action="contact">Angebot anfragen</button>
     </div>
@@ -143,6 +148,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span>✓ Studentenrabatt</span>
       </div>
       <button class="provider-cta-btn secondary" data-action="contact">Angebot anfragen</button>
+    </div>
+  </section>
+
+  <!-- Sammelanfrage -->
+  <section class="vgl-bulk-section">
+    <div class="container">
+      <div class="bulk-card">
+        <div class="bulk-header">
+          <span class="bulk-badge">🚀 Alle Anbieter auf einmal</span>
+          <h2>Spare Zeit – frage bei allen Anbietern gleichzeitig an</h2>
+          <p>Nutze unseren Service und frage gleich bei allen Anbietern gleichzeitig an. Trage deine Daten hier ein und erhalte mehrere Angebote zeitgleich.</p>
+        </div>
+
+        <form id="bulkContactForm" autocomplete="on">
+          <div class="vgl-form-group">
+            <label for="b_name">Vor- und Nachname *</label>
+            <input type="text" id="b_name" name="name" placeholder="Max Mustermann" required>
+          </div>
+          <div class="vgl-form-row">
+            <div class="vgl-form-group">
+              <label for="b_email">E-Mail *</label>
+              <input type="email" id="b_email" name="email" placeholder="max@beispiel.de" required>
+            </div>
+            <div class="vgl-form-group">
+              <label for="b_phone">Telefon *</label>
+              <input type="tel" id="b_phone" name="phone" placeholder="0151 1234567" required>
+            </div>
+          </div>
+          <div class="vgl-form-group">
+            <label for="b_strasse">Straße + Hausnr.</label>
+            <input type="text" id="b_strasse" name="strasse" placeholder="Musterstraße 12">
+          </div>
+          <div class="vgl-form-row">
+            <div class="vgl-form-group">
+              <label for="b_plz">PLZ *</label>
+              <input type="text" id="b_plz" name="plz" placeholder="85049" required maxlength="5" pattern="[0-9]{5}" inputmode="numeric">
+            </div>
+            <div class="vgl-form-group">
+              <label for="b_ort">Ort</label>
+              <input type="text" id="b_ort" name="ort" placeholder="Musterstadt">
+            </div>
+          </div>
+          <div class="vgl-form-group">
+            <label for="b_nachricht">Nachricht (optional)</label>
+            <textarea id="b_nachricht" name="nachricht" rows="3" placeholder="Gibt es etwas, das die Anbieter wissen sollten?"></textarea>
+          </div>
+          <button type="submit" class="vgl-form-submit" id="bulkSubmitBtn">✓ Bei allen Anbietern anfragen</button>
+          <p class="vgl-form-privacy">🔒 Deine Daten werden an alle gelisteten Anbieter weitergeleitet – kostenlos &amp; unverbindlich.</p>
+        </form>
+      </div>
     </div>
   </section>
 
