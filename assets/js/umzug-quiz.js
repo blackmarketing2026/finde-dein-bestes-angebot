@@ -67,13 +67,14 @@ document.addEventListener("DOMContentLoaded", function () {
     goToStep(currentStep - 1);
   });
 
-  // Submit -> save to sessionStorage -> redirect to results page
-  document.getElementById("quizForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    var formData = new FormData(this);
+  // Save quiz answers to sessionStorage and redirect to results page
+  document.getElementById("quizSubmitBtn").addEventListener("click", function () {
     var quizData = {};
-    formData.forEach(function (val, key) {
+    var inputs = document.querySelectorAll("#quizForm input:checked, #quizForm select, #quizForm textarea");
+    inputs.forEach(function (el) {
+      var key = el.name;
+      var val = el.value;
+      if (!key) return;
       if (quizData[key]) {
         if (!Array.isArray(quizData[key])) quizData[key] = [quizData[key]];
         quizData[key].push(val);

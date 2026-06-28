@@ -84,7 +84,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="quiz-progress-label" id="progressLabel">Schritt 1 von 7</div>
 
-        <form id="quizForm" autocomplete="off">
+        <div id="quizForm">
 
           <!-- Schritt 1: Umzugsart -->
           <div class="q-step active" data-step="1">
@@ -347,10 +347,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span>🏪 Zwischenlagerung</span>
               </label>
             </div>
-            <button type="submit" class="quiz-submit-btn">Umzugsangebote vergleichen →</button>
+            <button type="button" id="quizSubmitBtn" class="quiz-submit-btn">Umzugsangebote vergleichen →</button>
           </div>
 
-        </form>
+        </div>
 
         <button class="quiz-back-btn hidden" id="backBtn">← Zurück</button>
       </div>
