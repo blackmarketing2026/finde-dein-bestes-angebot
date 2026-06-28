@@ -118,15 +118,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Submit contact form
-  document.getElementById("contactForm").addEventListener("submit", async function (e) {
-    e.preventDefault();
-    var submitBtn = document.getElementById("submitBtn");
+  document.getElementById("submitBtn").addEventListener("click", async function () {
+    var form = document.getElementById("contactForm");
+    if (!form.reportValidity()) return;
+    var submitBtn = this;
     var originalText = submitBtn.textContent;
     submitBtn.disabled = true;
     submitBtn.textContent = "Wird gesendet...";
 
     var contactData = {};
-    new FormData(this).forEach(function (val, key) { contactData[key] = val; });
+    new FormData(form).forEach(function (val, key) { contactData[key] = val; });
 
     var lead = {
       quiz: quizData,
@@ -175,15 +176,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // Bulk contact form – send to all providers
   var bulkForm = document.getElementById("bulkContactForm");
   if (bulkForm) {
-    bulkForm.addEventListener("submit", async function (e) {
-      e.preventDefault();
-      var bulkBtn = document.getElementById("bulkSubmitBtn");
+    document.getElementById("bulkSubmitBtn").addEventListener("click", async function () {
+      if (!bulkForm.reportValidity()) return;
+      var bulkBtn = this;
       var originalBulkText = bulkBtn.textContent;
       bulkBtn.disabled = true;
       bulkBtn.textContent = "Wird gesendet...";
 
       var contactData = {};
-      new FormData(this).forEach(function (val, key) { contactData[key] = val; });
+      new FormData(bulkForm).forEach(function (val, key) { contactData[key] = val; });
 
       var allProviders = [];
       document.querySelectorAll(".provider-card").forEach(function (card) {

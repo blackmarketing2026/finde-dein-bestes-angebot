@@ -39,12 +39,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Formular absenden
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    var formData = new FormData(form);
+  document.getElementById("leadSubmitBtn").addEventListener("click", function () {
+    var inputs = document.querySelectorAll("#leadForm input:checked, #leadForm input[type='text'], #leadForm input[type='email'], #leadForm input[type='tel'], #leadForm select, #leadForm textarea");
     var data = {};
-    formData.forEach(function (value, key) { data[key] = value; });
+    inputs.forEach(function (el) {
+      if (el.name && el.value) data[el.name] = el.value;
+    });
 
     // Daten im sessionStorage speichern
     sessionStorage.setItem("leadData", JSON.stringify(data));

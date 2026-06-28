@@ -58,7 +58,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="progress-text" id="progressText">Schritt 1 von 4</span>
         </div>
 
-        <form id="leadForm" autocomplete="off">
+        <div id="leadForm">
 
           <!-- Schritt 1: Was soll entrümpelt werden? -->
           <div class="form-step active" data-step="1">
@@ -211,13 +211,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <label for="message">Nachricht (optional)</label>
               <textarea id="message" name="message" rows="3" placeholder="Beschreibe kurz dein Anliegen..."></textarea>
             </div>
-            <button type="submit" class="btn btn-success btn-lg" style="width:100%; margin-top: 1rem;">
+            <button type="button" id="leadSubmitBtn" class="btn btn-success btn-lg" style="width:100%; margin-top: 1rem;">
               🔍 Angebote vergleichen
             </button>
             <p class="form-privacy">🔒 Deine Daten sind sicher. Keine Weitergabe an Dritte.</p>
           </div>
 
-        </form>
+        </div>
       </div>
 
       <!-- Live-Aktivität -->

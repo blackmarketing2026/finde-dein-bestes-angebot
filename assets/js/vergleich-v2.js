@@ -34,12 +34,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Quiz absenden -> KI-Animation starten
-  document.getElementById("quizForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    var formData = new FormData(this);
+  document.getElementById("quizSubmitBtn").addEventListener("click", function () {
     var quizData = {};
-    formData.forEach(function (val, key) {
+    var inputs = document.querySelectorAll("#quizForm input:checked, #quizForm select, #quizForm textarea");
+    inputs.forEach(function (el) {
+      var key = el.name;
+      var val = el.value;
+      if (!key) return;
       if (quizData[key]) {
         if (!Array.isArray(quizData[key])) quizData[key] = [quizData[key]];
         quizData[key].push(val);
@@ -272,15 +273,16 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Kontaktformular absenden
-  document.getElementById("contactForm").addEventListener("submit", async function (e) {
-    e.preventDefault();
-    var submitButton = this.querySelector('button[type="submit"]');
+  document.getElementById("contactSubmitBtn").addEventListener("click", async function () {
+    var form = document.getElementById("contactForm");
+    if (!form.reportValidity()) return;
+    var submitButton = this;
     var originalButtonText = submitButton.textContent;
     submitButton.disabled = true;
     submitButton.textContent = "Anfrage wird gesendet...";
 
     var contactData = {};
-    new FormData(this).forEach(function (val, key) { contactData[key] = val; });
+    new FormData(form).forEach(function (val, key) { contactData[key] = val; });
 
     var quizData = JSON.parse(sessionStorage.getItem("quizData") || "{}");
 

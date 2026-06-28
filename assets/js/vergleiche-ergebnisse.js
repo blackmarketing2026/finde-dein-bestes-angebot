@@ -118,15 +118,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Submit contact form
-  document.getElementById("contactForm").addEventListener("submit", async function (e) {
-    e.preventDefault();
-    var submitBtn = document.getElementById("submitBtn");
+  document.getElementById("submitBtn").addEventListener("click", async function () {
+    var form = document.getElementById("contactForm");
+    if (!form.reportValidity()) return;
+    var submitBtn = this;
     var originalText = submitBtn.textContent;
     submitBtn.disabled = true;
     submitBtn.textContent = "Wird gesendet...";
 
     var contactData = {};
-    new FormData(this).forEach(function (val, key) { contactData[key] = val; });
+    new FormData(form).forEach(function (val, key) { contactData[key] = val; });
 
     var lead = {
       quiz: quizData,
