@@ -151,6 +151,14 @@ document.addEventListener("DOMContentLoaded", function () {
       closeModal();
       document.getElementById("successOverlay").classList.remove("hidden");
       document.getElementById("contactForm").reset();
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "form_submit",
+        form_type: "lead",
+        form_page: "entruempelungsangebote-ergebnisse",
+        provider: lead.provider
+      });
     } catch (error) {
       console.error("Lead konnte nicht gesendet werden:", error);
       alert("Die Anfrage konnte gerade nicht gesendet werden. Bitte versuche es gleich erneut.");
