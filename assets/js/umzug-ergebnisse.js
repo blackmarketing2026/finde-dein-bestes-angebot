@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
-        event: "lead_submit",
+        event: "form_submit",
         form_type: "lead",
         form_page: "umzugsangebote-ergebnisse",
         provider: lead.provider
@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-          event: "lead_submit",
+          event: "form_submit",
           form_type: "bulk_lead",
           form_page: "umzugsangebote-ergebnisse",
           provider: "alle"
