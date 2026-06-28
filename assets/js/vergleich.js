@@ -148,13 +148,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       modalOverlay.classList.add("hidden");
       successOverlay.classList.remove("hidden");
-
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: "form_submit",
-        form_type: "lead",
-        provider: lead.provider
-      });
     } catch (error) {
       console.error("Lead konnte nicht gesendet werden:", error);
       alert("Die Anfrage konnte gerade nicht gesendet werden. Bitte versuche es gleich erneut.");
